@@ -1,0 +1,30 @@
+import dash
+from dash import dcc, html
+
+# Initialize the Dash app
+app = dash.Dash(__name__)
+
+# App layout
+app.layout = html.Div(
+    children=[
+        html.H1("Chemistry Dashboard", style={'textAlign': 'center'}),
+        html.P("Welcome to the Chemistry Data Dashboard!", style={'textAlign': 'center'}),
+        
+        # Placeholder for future content, e.g., graphs, tables, etc.
+        dcc.Graph(
+            id='example-graph',
+            figure={
+                'data': [
+                    {'x': [1, 2, 3, 4, 5], 'y': [10, 11, 12, 13, 14], 'type': 'line', 'name': 'Sample Data'}
+                ],
+                'layout': {
+                    'title': 'Sample Graph'
+                }
+            }
+        )
+    ]
+)
+
+# Run the app
+if __name__ == '__main__':
+    app.run_server(debug=True)
